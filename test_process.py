@@ -10,6 +10,17 @@ from process import process
 def test_statement_coverage(input, expected):
     assert process(input) == expected
 
+#Caso de prueba 2 
+@pytest.mark.branch_coverage
+@pytest.mark.parametrize("input, expected", 
+                         [
+                             ([2], ["positivo", "par"]),([-1],[]), ([],[])
+                         ]
+                         )
+def test_case_1(input, expected):
+    assert process(input) == expected
+
+
 
 
 
